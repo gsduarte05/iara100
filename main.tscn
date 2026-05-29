@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cqw6qw0kq8rpn"]
+
+[ext_resource type="PackedScene" uid="uid://blwlgf7noc70j" path="res://cenas/carina/carina.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://b5a3g1x2mgg6y" path="res://assets/Personagens/corpo/Iara/Iara saindo.png" id="2_h2yge"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bvp3"]
+atlas = ExtResource("2_h2yge")
+region = Rect2(55, 0, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
+atlas = ExtResource("2_h2yge")
+region = Rect2(115, 0, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
+atlas = ExtResource("2_h2yge")
+region = Rect2(175, 0, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
+atlas = ExtResource("2_h2yge")
+region = Rect2(235, 0, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
+atlas = ExtResource("2_h2yge")
+region = Rect2(295, 0, 60, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kek77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bvp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lquwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mycd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_272bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vw27")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=416408272]
+
+[node name="Carina" parent="." unique_id=1385650990 instance=ExtResource("1_ig7tw")]
+position = Vector2(303, 342)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Carina" unique_id=439230329]
+position = Vector2(14997, -16494)
+sprite_frames = SubResource("SpriteFrames_kek77")
+frame_progress = 0.53611445
+
+[node name="Camera2D" type="Camera2D" parent="Carina" unique_id=609025670]
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+editor_draw_drag_margin = true

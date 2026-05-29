@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bxhcnc16vtqvm"]
+
+[ext_resource type="Texture2D" uid="uid://b5a3g1x2mgg6y" path="res://assets/Personagens/corpo/Iara/Iara saindo.png" id="1_8dxhe"]
+[ext_resource type="Script" uid="uid://b5q0t2alao6le" path="res://cenas/mundo/iara_evento.gd" id="1_gpap1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u5c2"]
+atlas = ExtResource("1_8dxhe")
+region = Rect2(116, 0, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn80x"]
+atlas = ExtResource("1_8dxhe")
+region = Rect2(56, 0, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt45f"]
+atlas = ExtResource("1_8dxhe")
+region = Rect2(176, 0, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8251"]
+atlas = ExtResource("1_8dxhe")
+region = Rect2(236, 0, 60, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p61s3"]
+atlas = ExtResource("1_8dxhe")
+region = Rect2(296, 0, 60, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0tafe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u5c2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn80x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt45f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8251")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p61s3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_jetls"]
+resource_name = "mergulhando"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gpap1"]
+_data = {
+&"mergulhando": SubResource("Animation_jetls")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1556761470]
+position = Vector2(1, 1)
+script = ExtResource("1_gpap1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=864732591]
+position = Vector2(250, 151)
+sprite_frames = SubResource("SpriteFrames_0tafe")
+frame_progress = 0.8206064
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=665568558]
+libraries/ = SubResource("AnimationLibrary_gpap1")
